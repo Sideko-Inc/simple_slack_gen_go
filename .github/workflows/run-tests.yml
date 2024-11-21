@@ -37,7 +37,7 @@ jobs:
       - name: install dependencies
         run: |
           go mod tidy
-          go download
+          go mod download
       #------------------------------
       #  -----  run tests -----
       #------------------------------
