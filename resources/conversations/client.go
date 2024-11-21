@@ -41,23 +41,23 @@ func (c *Client) List(request ListRequest, reqModifiers ...RequestModifier) (typ
 	// Query params
 	params := url.Query()
 	cursor, err := request.Cursor.Value()
-	if err != nil {
+	if err == nil {
 		sdkcore.AddQueryParam(params, "cursor", cursor, false)
 	}
 	excludeArchived, err := request.ExcludeArchived.Value()
-	if err != nil {
+	if err == nil {
 		sdkcore.AddQueryParam(params, "exclude_archived", excludeArchived, false)
 	}
 	limit, err := request.Limit.Value()
-	if err != nil {
+	if err == nil {
 		sdkcore.AddQueryParam(params, "limit", limit, false)
 	}
 	teamId, err := request.TeamId.Value()
-	if err != nil {
+	if err == nil {
 		sdkcore.AddQueryParam(params, "team_id", teamId, false)
 	}
 	q_types, err := request.Types.Value()
-	if err != nil {
+	if err == nil {
 		sdkcore.AddQueryParam(params, "types", q_types, false)
 	}
 	url.RawQuery = params.Encode()
