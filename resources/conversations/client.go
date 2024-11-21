@@ -56,9 +56,9 @@ func (c *Client) List(request ListRequest, reqModifiers ...RequestModifier) (typ
 	if err != nil {
 		sdkcore.AddQueryParam(params, "team_id", teamId, false)
 	}
-	types, err := request.Types.Value()
+	q_types, err := request.Types.Value()
 	if err != nil {
-		sdkcore.AddQueryParam(params, "types", types, false)
+		sdkcore.AddQueryParam(params, "types", q_types, false)
 	}
 	url.RawQuery = params.Encode()
 
