@@ -8,7 +8,7 @@ on:
   workflow_dispatch: {}
 
 jobs:
-  publish:
+  push-tag:
     runs-on: ubuntu-latest
     steps:
       #---------------------------
@@ -22,7 +22,7 @@ jobs:
       - name: extract version
         run: |
           echo "SDK_TAG=v$(cat VERSION)" >> $GITHUB_ENV
-          echo "tagging version v$(cat VERSION)"
+          echo "tagging version v$(cat VERSION)..."
       #---------------------------------------
       #  -----  create and push tag  -----
       #---------------------------------------
