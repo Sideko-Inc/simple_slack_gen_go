@@ -27,7 +27,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 // Lists channels in the workspace.
 //
 // GET /conversations.list
-func (c *Client) List(request types.ListRequest, reqModifiers ...RequestModifier) (types.ListConversationsResponse, error) {
+func (c *Client) List(request ListRequest, reqModifiers ...RequestModifier) (types.ListConversationsResponse, error) {
 	// URL formatting
 	joined, err := url.JoinPath(c.coreClient.BaseURL, "/conversations.list")
 	if err != nil {
