@@ -27,7 +27,7 @@ func NewClient(coreClient *sdkcore.CoreClient) *Client {
 // Lists channels in the workspace.
 //
 // GET /conversations.list
-func (c *Client) List(request ListRequest, reqModifiers ...RequestModifier) (types.ListConversationsResponse, error) {
+func (c *Client) List(request types.ListRequest, reqModifiers ...RequestModifier) (types.ListConversationsResponse, error) {
 	// URL formatting
 	joined, err := url.JoinPath(c.coreClient.BaseURL, "/conversations.list")
 	if err != nil {
@@ -56,9 +56,9 @@ func (c *Client) List(request ListRequest, reqModifiers ...RequestModifier) (typ
 	if err == nil {
 		sdkcore.AddQueryParam(params, "team_id", teamId, false)
 	}
-	q_types, err := request.Types.Value()
+	typesQ, err := request.Types.Value()
 	if err == nil {
-		sdkcore.AddQueryParam(params, "types", q_types, false)
+		sdkcore.AddQueryParam(params, "types", typesQ, false)
 	}
 	url.RawQuery = params.Encode()
 

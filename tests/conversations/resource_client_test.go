@@ -10,7 +10,7 @@ import (
 
 func TestList200GeneratedSuccess(t *testing.T) {
 	// Success case test
-	client := sdk.NewClient(sdk.WithAuth("API_TOKEN"), sdk.WithBaseURL("https://api.sideko-staging.dev/v1/mock/demo/simple-slack/0.1.0"))
+	client := sdk.NewClient(sdk.WithAuth("API_TOKEN"), sdk.WithBaseURL("https://api.sideko-staging.dev/v1/mock/demo/simple-slack/0.2.0"))
 	res, err := client.Conversations.List(conversations.ListRequest{})
 
 	if err != nil {

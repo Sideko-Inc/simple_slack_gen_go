@@ -17,6 +17,10 @@ client := sdk.NewClient(sdk.WithAuth(os.Getenv("API_TOKEN")))
 
 ## Module Documentation and Snippets
 
+### [chat](resources/chat/README.md)
+
+* [post_message](resources/chat/README.md#post_message) - 
+
 ### [conversations](resources/conversations/README.md)
 
 * [list](resources/conversations/README.md#list) - 
